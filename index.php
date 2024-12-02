@@ -4,6 +4,7 @@
     <title>TrainingLab Javascript - Dynamic Library</title>
     <?php require_once 'head.php'; ?>
     <link rel="stylesheet" href="resources/css/index.min.css">
+    <script src="js/index.js"></script>
 </head>
 <body>
     <main>

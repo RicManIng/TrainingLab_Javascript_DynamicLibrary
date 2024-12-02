@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Science Fiction"
+    },
+    {
+        "name": "Fantasy"
+    },
+    {
+        "name": "Mystery"
+    },
+    {
+        "name": "Horror"
+    },
+    {
+        "name": "Romance"
+    },
+    {
+        "name": "Thriller"
+    },
+    {
+        "name": "Historical"
+    },
+    {
+        "name": "Western"
+    },
+    {
+        "name": "Dystopian"
+    },
+    {
+        "name": "Contemporary"
+    },
+    {
+        "name": "Young Adult"
+    },
+    {
+        "name": "Children's"
+    },
+    {
+        "name": "Non-Fiction"
+    },
+    {
+        "name": "Biography"
+    },
+    {
+        "name": "Self-Help"
+    },
+    {
+        "name": "Graphic Novel"
+    },
+    {
+        "name": "Poetry"
+    },
+    {
+        "name": "Adventure"
+    },
+    {
+        "name": "Memoir"
+    },
+    {
+        "name": "Satire"
+    },
+    {
+        "name": "Crime"
+    },
+    {
+        "name": "Spirituality"
+    },
+    {
+        "name": "Philosophical"
+    },
+    {
+        "name": "Comedy"
+    },
+    {
+        "name": "War"
+    },
+    {
+        "name": "Memoir"
+    },
+    {
+        "name": "Paranormal"
+    },
+    {
+        "name": "Educational"
+    },
+    {
+        "name": "Slice of Life"
+    },
+    {
+        "name": "Urban"
+    },
+    {
+        "name": "Thriller"
+    },
+    {
+        "name": "Epic"
+    }
+]

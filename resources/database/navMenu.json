@@ -17,6 +17,6 @@
     {
         "id" : 4,
         "name" : "Logout",
-        "url" : "register.php?selected=4&state=logout"
+        "url" : "login.php?selected=4&state=logout"
     }
 ]

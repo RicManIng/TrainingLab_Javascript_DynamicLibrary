@@ -2,7 +2,7 @@
 
 body{
     background-image: url('../img/pexels-dayanrodio-4132936.jpg');
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -18,7 +18,26 @@ body{
         align-items: center;
         justify-content: center;
         gap: 10vh;
-        background-color: $box-background-color-dark-opacity;
+        background: linear-gradient(to right, rgba(57, 0, 0, 1), rgba(57, 0, 0, 1) 60%, rgba(57, 0, 0, 0));
         height: 100vh;
+
+        h1, p{
+            color: $text-color-light;
+            text-align: center;
+        }
+
+        a{
+            text-decoration: none;
+            color: $text-color-light;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $text-color-light;
+            background-color: rgb(40, 0, 0);
+
+            &:hover{
+                background-color: $text-color-light;
+                color: $text-color-dark;
+            }
+        }
     }
 }
