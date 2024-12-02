@@ -1,0 +1,24 @@
+@import 'configParam';
+
+body{
+    background-image: url('../img/pexels-dayanrodio-4132936.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    main{
+        max-width: 600px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10vh;
+        background-color: $box-background-color-dark-opacity;
+        height: 100vh;
+    }
+}
