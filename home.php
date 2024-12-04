@@ -23,6 +23,7 @@
         </section>
         <section id="reviews">
             <h1>Reviews</h1>
+            <p id="noMoreReviewsMessage"></p>
             <button type="button" id="loadMore">Load More Reviews</button>
         </section>
     </main>
