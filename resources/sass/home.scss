@@ -14,8 +14,8 @@ main{
 
     section{
         margin: 5vh 0px;
-        width: 60%;
-        max-width: 600px;
+        width: 80%;
+        max-width: 800px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,6 +23,7 @@ main{
         border-radius: 20px;
         border: 1px solid $box-background-color-dark;
         background-color: $box-background-color-light-opacity;
+        gap: 5vh;
 
         button{
             margin: 0 auto;
@@ -83,6 +84,97 @@ main{
                         color: $text-color-light;
                     }
                 }
+            }
+        }
+
+        .review{
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: $box-background-color-dark;
+            position: relative;
+            transition: left 0.5s ease;
+
+            img{
+                width: 30%;
+                position: relative;
+                left: 10%;
+                border-radius: 20px;
+                border: 1px solid $box-background-color-light;
+            }
+
+            .infoContainer{
+                display: flex;
+                width: 50%;
+                flex-direction: column;
+                gap: 2vh;
+
+                h2, p, i{
+                    color: $text-color-light;
+                }
+
+                .evaluationContainer{
+                    display: flex;
+                    gap: 0.2vw;
+                }
+
+                .generalInformation {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: auto;
+                    border-top: 1px solid $text-color-light;
+                    padding-top: 2px;
+
+                    .likesContainer{
+                        display: flex;
+                        gap: 0.3vw;
+                    }
+
+                    a{
+                        background-color: transparent;
+                        color: $text-color-light;
+                        text-decoration: none;
+                        border: none;
+
+                        &:hover{
+                            color: rgb(143, 52, 52);
+                        }
+                    }
+                }
+
+                a{
+                    width: 30%;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background-color: $box-background-color-light;
+                    border: 1px solid $box-background-color-light;
+                    color: $text-color-dark;
+                    text-decoration: none;
+                    text-align: center;
+                    margin: 0 auto;
+
+                    &:hover{
+                        background-color: $box-background-color-dark;
+                        color: $text-color-light;
+                    }
+                }
+            }
+        }
+
+        .odd{
+            left: -100vw;
+        }
+
+        .even{
+            left: 100vw;
+            flex-direction: row-reverse;
+
+            img{
+                left: -10%;
             }
         }
     }
