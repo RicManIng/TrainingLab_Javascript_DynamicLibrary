@@ -30,11 +30,6 @@ export async function loadUser() {
 
 export function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
-    return (
-        /* the problem is here */
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    const midHeight = rect.top + rect.height / 2;
+    return midHeight <= (window.innerHeight || document.documentElement.clientHeight) && midHeight >= 0;
 }

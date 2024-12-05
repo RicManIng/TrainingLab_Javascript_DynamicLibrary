@@ -22,25 +22,27 @@ function adjustSelectStyle(event){
     }
 }
 
-function filterBooksByType(type){
+function filterBooksByType(type, books, likes){
     /* to implement */
+    let filteredBooks = books.filter(book => book.tipologia == type);
+    createBookCards(filteredBooks, likes, true);
 }
 
-function createBookCard(book, likesNumber){
+function createBookCard(book, likesNumber, position){
     /* to implement */
     let noMoreReviewsMessage = document.getElementById('noMoreReviewsMessage');
     let div = document.createElement('div');
     div.classList.add('review');
     noMoreReviewsMessage.parentNode.insertBefore(div, noMoreReviewsMessage);
-    if(book.id % 2 === 0){
+    if(position % 2 === 0){
         div.classList.add('even');
     } else {
         div.classList.add('odd');
     }
-
-    let img = document.createElement('img');
-    img.src = book.link;
-    div.appendChild(img);
+    
+    let imgContainer = document.createElement('div');
+    imgContainer.classList.add('imgContainer');
+    div.appendChild(imgContainer);
 
     let infoContainer = document.createElement('div');
     infoContainer.classList.add('infoContainer');
@@ -124,9 +126,13 @@ function createBookCards(books, likes, reset = false){
             showMore.style.display = 'none';
             break;
         }
-        const filteredBook = books.filter(book => book.id === i);
-        const filteredLike = likes.filter(like => like.id === i);
-        createBookCard(filteredBook[0], filteredLike[0].likes.length);
+        const filteredBook = books[i];
+        let id = filteredBook.id;
+        const filteredLike = likes.filter(like => like.id == id);
+        if(filteredBook && filteredLike.length > 0){
+            console.log(1);
+            createBookCard(filteredBook, filteredLike[0].likes.length, i);
+        }
     }
 }
 
@@ -136,14 +142,16 @@ function handleScroll(oddElements, evenElements) {
     oddElements.forEach(element => {
         if (isElementInViewport(element)) {
             element.style.left = '0';
-            console.log('2');
+        } else {
+            element.style.left = '-100vw';
         }
     });
 
     evenElements.forEach(element => {
         if (isElementInViewport(element)) {
             element.style.left = '0';
-            console.log('3');
+        } else {
+            element.style.left = '100vw';
         }
     });
 }
@@ -174,7 +182,10 @@ window.onload = async function() {
 
     filterCards.addEventListener('click', function(){
         let selectedType = select.value;
-        filterBooksByType(selectedType);
+        filterBooksByType(selectedType, reviewArray, reviewLikes);
+        const oddElements = document.querySelectorAll('.odd');
+        const evenElements = document.querySelectorAll('.even');
+        handleScroll(oddElements, evenElements);
     });
 
     const oddElements = document.querySelectorAll('.odd');
@@ -182,7 +193,8 @@ window.onload = async function() {
 
     handleScroll(oddElements, evenElements);
     window.addEventListener('scroll', function(){
+        const oddElements = document.querySelectorAll('.odd');
+        const evenElements = document.querySelectorAll('.even');
         handleScroll(oddElements, evenElements);
-        console.log('1');
     });
 }

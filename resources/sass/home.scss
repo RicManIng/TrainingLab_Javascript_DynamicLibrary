@@ -96,13 +96,32 @@ main{
             background-color: $box-background-color-dark;
             position: relative;
             transition: left 0.5s ease;
+            max-height: 80vh;
 
-            img{
-                width: 30%;
+            @media only screen and (max-width: 1000px){
+                flex-direction: column;
+                align-items: center;
+                gap: 2vh;
+                height: 80vh;
+            }
+
+            .imgContainer{
+                width: 40%;
+                height: auto;
                 position: relative;
-                left: 10%;
                 border-radius: 20px;
                 border: 1px solid $box-background-color-light;
+                background-image: url('../img/pexels-natalie-bond-320378-1643033.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                @media only screen and (max-width: 1000px){
+                    position: inherit;
+                    height: 50%;
+                    width: 80%;
+                    max-width: 100%;
+                }
             }
 
             .infoContainer{
@@ -110,6 +129,14 @@ main{
                 width: 50%;
                 flex-direction: column;
                 gap: 2vh;
+
+                @media only screen and (max-width: 1000px){
+                    width: 100%;
+
+                    h2{
+                        text-align: center;
+                    }
+                }
 
                 h2, p, i{
                     color: $text-color-light;
@@ -129,9 +156,15 @@ main{
                     border-top: 1px solid $text-color-light;
                     padding-top: 2px;
 
+                    p{
+                        width: 20%;
+                        text-align: end;
+                    }
+
                     .likesContainer{
                         display: flex;
                         gap: 0.3vw;
+                        width: 20%;
                     }
 
                     a{
@@ -157,6 +190,10 @@ main{
                     text-align: center;
                     margin: 0 auto;
 
+                    @media only screen and (max-width: 1000px){
+                        width: 80%;
+                    }
+
                     &:hover{
                         background-color: $box-background-color-dark;
                         color: $text-color-light;
@@ -173,8 +210,8 @@ main{
             left: 100vw;
             flex-direction: row-reverse;
 
-            img{
-                left: -10%;
+            @media only screen and (max-width: 1000px){
+                flex-direction: column;
             }
         }
     }
