@@ -98,7 +98,7 @@ main{
             transition: left 0.5s ease;
             max-height: 80vh;
 
-            @media only screen and (max-width: 1000px){
+            @media only screen and (max-width: 850px){
                 flex-direction: column;
                 align-items: center;
                 gap: 2vh;
@@ -116,7 +116,7 @@ main{
                 background-position: center;
                 background-repeat: no-repeat;
 
-                @media only screen and (max-width: 1000px){
+                @media only screen and (max-width: 850px){
                     position: inherit;
                     height: 50%;
                     width: 80%;
@@ -130,7 +130,7 @@ main{
                 flex-direction: column;
                 gap: 2vh;
 
-                @media only screen and (max-width: 1000px){
+                @media only screen and (max-width: 850px){
                     width: 100%;
 
                     h2{
@@ -190,7 +190,7 @@ main{
                     text-align: center;
                     margin: 0 auto;
 
-                    @media only screen and (max-width: 1000px){
+                    @media only screen and (max-width: 850px){
                         width: 80%;
                     }
 
@@ -210,7 +210,7 @@ main{
             left: 100vw;
             flex-direction: row-reverse;
 
-            @media only screen and (max-width: 1000px){
+            @media only screen and (max-width: 850px){
                 flex-direction: column;
             }
         }

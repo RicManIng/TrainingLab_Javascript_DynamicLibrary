@@ -47,8 +47,64 @@ function createPopUpLikes(likes){
     });
 }
 
+function createCommentCard(comment){
+    let commentCard = document.createElement('div');
+    commentCard.classList.add('comment');
+
+    let commentContent = document.createElement('p');
+    commentContent.innerText = comment.contenuto;
+    commentCard.appendChild(commentContent);
+
+    let commentInfoContainer = document.createElement('div');
+    commentInfoContainer.classList.add('commentInfoContainer');
+    commentCard.appendChild(commentInfoContainer);
+
+    let likeContainer = document.createElement('div');
+    likeContainer.classList.add('likeContainer');
+    commentInfoContainer.appendChild(likeContainer);
+
+    let likeIcon = document.createElement('i');
+    likeIcon.classList.add('fas');
+    likeIcon.classList.add('fa-thumbs-up');
+    likeIcon.title = 'Show Like';
+    likeIcon.addEventListener('click', function(){
+        createPopUpLikes(comment.likes);
+    });
+    likeContainer.appendChild(likeIcon);
+
+    let likeNumber = document.createElement('p');
+    likeNumber.innerText = comment.likes.length;
+    likeContainer.appendChild(likeNumber);
+
+    let user = document.createElement('a');
+    user.href = 'userDetail.php?username=' + comment.username;
+    user.innerText = comment.username;
+    commentInfoContainer.appendChild(user);
+    return commentCard;
+}
+
 function showComments(comments){
-    /* to implement */
+    if (comments.length == 0){
+        let noComments = document.createElement('p');
+        noComments.innerText = 'No comments to show';
+        noComments.classList.add('comment');
+        document.querySelector('main').appendChild(noComments);
+    } else {
+        let commentCardContainer = document.createElement('div');
+        commentCardContainer.classList.add('commentCardContainer');
+        commentCardContainer.style.height = 0;
+        commentCardContainer.style.overflow = 'hidden';
+        commentCardContainer.style.transition = 'height 0.5s';
+        document.querySelector('main').appendChild(commentCardContainer);
+
+        comments.forEach(comment => {
+            let commentCard = createCommentCard(comment);
+            commentCardContainer.appendChild(commentCard);
+        });  
+
+        let commentContainerHeight = commentCardContainer.scrollHeight;
+        commentCardContainer.style.height = commentContainerHeight + 'px';
+    }
 }
 
 function buildPage(book, bookLikeNumber, bookCommentsNumber, bookComments, bookLikes){
@@ -139,7 +195,18 @@ function buildPage(book, bookLikeNumber, bookCommentsNumber, bookComments, bookL
     let commentIconContainer = document.createElement('button');
     commentContainer.title = 'View Comments';
     commentContainer.addEventListener('click', function(){
-        showComments(bookComments);
+        let comments = document.getElementsByClassName('comment')
+        if(comments.length > 0){
+            let commentCardContainer = document.getElementsByClassName('commentCardContainer')[0];
+            console.log(commentCardContainer.style.height);
+            if (commentCardContainer.style.height == '0px'){
+                commentCardContainer.style.height = commentCardContainer.scrollHeight + 'px';
+            } else {
+                commentCardContainer.style.height = 0;
+            }
+        } else {
+            showComments(bookComments);
+        }
     });
     commentContainer.appendChild(commentIconContainer);
 
