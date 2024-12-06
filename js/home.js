@@ -23,13 +23,11 @@ function adjustSelectStyle(event){
 }
 
 function filterBooksByType(type, books, likes){
-    /* to implement */
     let filteredBooks = books.filter(book => book.tipologia == type);
     createBookCards(filteredBooks, likes, true);
 }
 
 function createBookCard(book, likesNumber, position){
-    /* to implement */
     let noMoreReviewsMessage = document.getElementById('noMoreReviewsMessage');
     let div = document.createElement('div');
     div.classList.add('review');
@@ -39,7 +37,7 @@ function createBookCard(book, likesNumber, position){
     } else {
         div.classList.add('odd');
     }
-    
+
     let imgContainer = document.createElement('div');
     imgContainer.classList.add('imgContainer');
     div.appendChild(imgContainer);

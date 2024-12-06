@@ -1,0 +1,167 @@
+@import 'configParam';
+
+body{
+    background-color: $box-background-color-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+    margin: 10vh 0;
+    
+    .infoPage{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 50vh;
+        
+
+        .imgContainer{
+            width: 40%;
+            height: 100%;
+            border-radius: 20px;
+            border: 1px solid $box-background-color-light;
+        }
+
+        .infoContainer{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2{
+                text-align: center;
+            }
+
+            h2, p, i{
+                color: $text-color-light;
+            }
+
+            .evaluationContainer{
+                display: flex;
+                gap: 0.2vw;
+            }
+        }
+    }
+
+    .reviewContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+
+        h3, p{
+            color: $text-color-light;
+        }
+
+        p{
+            text-align: justify;
+        }
+    }
+
+    .generalInformation{
+        display: flex;
+        justify-content: space-between;
+        color: $text-color-light;
+        padding-top: 2vh;
+        border-top: 1px solid $box-background-color-light;
+
+        a{
+            text-decoration: none;
+            color: $text-color-light;
+
+            &:hover{
+                color: rgb(133, 65, 65);
+            }
+        }
+
+        .likesContainer{
+            display: flex;
+            gap: 0.3vw;
+        }
+
+        .commentContainer{
+            display: flex;
+            gap: 0.3vw;
+        }
+
+        button{
+            background-color: transparent;
+            border: none;
+
+            i{
+                color: $text-color-light;
+
+                &:hover{
+                    color: rgb(133, 65, 65);
+                }
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.blurOverlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .likesScrollView{
+        height: 70vh;
+        width: 50vw;
+        background-color: $box-background-color-light;
+        overflow: scroll;
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid $box-background-color-dark;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        button{
+            background-color: transparent;
+            border: none;
+            color: $text-color-dark;
+            
+            &:hover{
+                cursor: pointer;
+                color: rgb(133, 65, 65);
+            }
+        }
+
+        .likeCard{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2vh 0;
+            border-bottom: 1px solid $text-color-dark;
+
+            &:last-child{
+                border-bottom: none;
+            }
+
+            a{
+                text-decoration: none;
+                color: $text-color-dark;
+
+                &:hover{
+                    color: rgb(133, 65, 65);
+                }
+            }
+        }
+    }
+}
+
+
+

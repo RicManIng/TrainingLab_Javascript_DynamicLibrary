@@ -33,3 +33,14 @@ export function isElementInViewport(el) {
     const midHeight = rect.top + rect.height / 2;
     return midHeight <= (window.innerHeight || document.documentElement.clientHeight) && midHeight >= 0;
 }
+
+export function queryString(name) {
+    let value = null;
+
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.has(prop) ? searchParams.get(prop) : null
+    });
+    value = params[name];
+    console.log(`Value of ${name}: ${value}`);
+    return value;
+}
