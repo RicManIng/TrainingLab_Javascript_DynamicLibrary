@@ -14,11 +14,153 @@ main{
         background-color: $box-background-color-light;
         display: flex;
         flex-direction: column;
-        gap: 2vh;
         width: 60%;
 
-        h1, label{
-            color: $text-color-dark;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            width: 100%;
+
+            h1, label{
+                color: $text-color-dark;
+            }
+
+            h1{
+                width: 100%;
+                text-align: center;
+            }
+
+            input{
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                background-color: $box-background-color-dark;
+                color: $text-color-light;
+
+                &::placeholder{
+                    color: darkgray;
+                }
+            }
+
+            button{
+                margin: 5vh auto;
+                width: 50%;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                background-color: $box-background-color-dark;
+                color: $text-color-light;
+
+                &:hover{
+                    background-color: rgb(142, 64, 64);
+                    color: $text-color-dark;
+                    cursor: pointer;
+                }
+            }
+
+            p{
+                color: $text-color-dark;
+                text-align: center;
+            }
+
+            a{
+                color: $text-color-light;
+                text-align: center;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: $box-background-color-dark;
+                width: 50%;
+                margin: 0 auto;
+                font-size: 0.8rem;
+                border: 1px solid $text-color-dark;
+
+                &:hover{
+                    background-color: rgb(142, 64, 64);
+                    color: $text-color-dark;
+                }
+            }
+        }
+        
+    }
+
+    #register-form{
+        padding: 30px;
+        border-radius: 15px;
+        background-color: $box-background-color-light;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: 10vh 0;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            width: 100%;
+
+            h1, label{
+                color: $text-color-dark;
+            }
+
+            h1{
+                width: 100%;
+                text-align: center;
+            }
+
+            input{
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                background-color: $box-background-color-dark;
+                color: $text-color-light;
+
+                &::placeholder{
+                    color: darkgray;
+                }
+            }
+
+            #age{
+                color: darkgray;
+
+                &::-webkit-calendar-picker-indicator {
+                    filter: invert(1); 
+                }
+            }
+
+            #account-image{
+                color: darkgray;
+
+                &::-webkit-file-upload-button {
+                    color: $text-color-light;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            button{
+                margin: 5vh auto 0 auto;
+                width: 50%;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                background-color: $box-background-color-dark;
+                color: $text-color-light;
+
+                &:hover{
+                    background-color: rgb(142, 64, 64);
+                    color: $text-color-dark;
+                    cursor: pointer;
+                }
+
+                &:disabled{
+                    background-color: darkgray;
+                    color: rgb(67, 67, 67);
+                    cursor: not-allowed;
+                }
+            }
         }
     }
 }
