@@ -44,3 +44,10 @@ export function queryString(name) {
     console.log(`Value of ${name}: ${value}`);
     return value;
 }
+
+export function calculateAge(date){
+    const birthDate = new Date(date);
+    const diff = Date.now() - birthDate.getTime();
+    const ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}

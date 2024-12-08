@@ -16,7 +16,7 @@
     },
     {
         "id" : 4,
-        "name" : "Logout",
-        "url" : "login.php?selected=4&state=logout"
+        "name" : "Your Account",
+        "url" : "login.php?selected=4&state=account"
     }
 ]

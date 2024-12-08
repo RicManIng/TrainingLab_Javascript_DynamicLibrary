@@ -1,0 +1,24 @@
+@import 'configParam';
+
+main{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $box-background-color-dark;
+
+    #login-form{
+        padding: 30px;
+        border-radius: 15px;
+        background-color: $box-background-color-light;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 60%;
+
+        h1, label{
+            color: $text-color-dark;
+        }
+    }
+}

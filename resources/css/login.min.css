@@ -1,0 +1,1 @@
+main{width:100%;min-height:90vh;display:flex;justify-content:center;align-items:center;background-color:#390000}main #login-form{padding:30px;border-radius:15px;background-color:#ff7474;display:flex;flex-direction:column;gap:2vh;width:60%}main #login-form h1,main #login-form label{color:#390000}

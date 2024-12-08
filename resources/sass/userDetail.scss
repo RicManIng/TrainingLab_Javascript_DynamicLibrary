@@ -1,2 +1,168 @@
 @import 'configParam';
 
+body{
+    background-color: $box-background-color-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+main{
+    width: 80%;
+    margin: 10vh 0;
+
+    h2{
+        margin: 5vh 0;
+        color: $text-color-light;
+        width: 100%;
+        text-align: center;
+    }
+
+    #userContainer{
+        display: flex;
+        justify-content: space-between;
+        min-height: 50vh;
+
+        #imageContainer{
+            width: 45%;
+            border-radius: 20px;
+            border: 1px solid $box-background-color-light;
+        }
+
+        #infoContainer{
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2vh;
+
+            p, h1{
+                color: $text-color-light;
+            }
+
+            #averageReviewContainer{
+                display: flex;
+                align-items: center;
+                gap: 0.3vw;
+
+                i{
+                    color: $text-color-light;
+                }
+            }
+        }
+
+    }
+
+    .reviewCard{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: $box-background-color-light;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 3vh;
+
+        h4, p, i{
+            color: $text-color-dark;
+        }
+
+        .reviewLikeContainer, .reviewCommentContainer{
+            display: flex;
+            gap: 0.3vw;
+        }
+
+        button{
+            background-color: $box-background-color-dark;
+            color: $text-color-light;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $box-background-color-light;
+
+            &:hover{
+                background-color: rgb(152, 71, 71);
+                color: $text-color-dark;
+                border: 1px solid $box-background-color-dark;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .commentCard{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 3vh 0;
+        border-bottom: 1px solid $box-background-color-light;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        h4, p, i{
+            color: $text-color-light;
+        }
+
+        .commentLikesContainer{
+            display: flex;
+            gap: 0.3vw;
+        }
+
+        button{
+            background-color: $box-background-color-dark;
+            color: $text-color-light;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $box-background-color-light;
+
+            &:hover{
+                background-color: rgb(152, 71, 71);
+                color: $text-color-dark;
+                border: 1px solid $box-background-color-dark;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .likeCard{
+        display: flex;
+        width: 100%;
+        padding: 3vh 0;
+        border-bottom: 1px solid $box-background-color-light;
+        align-items: center;
+        justify-content: space-between;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        h4, p, i, a{
+            color: $text-color-light;
+        }
+
+        a{
+            &:hover{
+                color: rgb(131, 61, 61);
+                cursor: pointer;
+            }
+        }
+
+        button{
+            background-color: $box-background-color-dark;
+            color: $text-color-light;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $box-background-color-light;
+
+            &:hover{
+                background-color: rgb(152, 71, 71);
+                color: $text-color-dark;
+                border: 1px solid $box-background-color-dark;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
