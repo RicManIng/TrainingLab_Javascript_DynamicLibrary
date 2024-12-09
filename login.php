@@ -69,9 +69,9 @@
                     <input type="date" name="age" id="age" required placeholder="insert your birth date">
                     <label for="password">Password * : </label>
                     <input type="password" name="password" id="password" required placeholder="insert your password">
-                    <label for="password">Confirm Password * : </label>
-                    <input type="password" name="password" id="password" required placeholder="insert your password">
-                    <label for="account-image">Insert your account image</label>
+                    <label for="confirm-password">Confirm Password * : </label>
+                    <input type="password" name="confirm-password" id="confirm-password" required placeholder="insert your password">
+                    <label for="account-image">Insert your account image : </label>
                     <input type="file" name="account-image" id="account-image">
                     <button type="submit" disabled>Register</button>
                 </form>
