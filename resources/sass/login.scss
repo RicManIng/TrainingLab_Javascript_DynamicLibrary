@@ -125,7 +125,15 @@ main{
                 color: darkgray;
 
                 &::-webkit-calendar-picker-indicator {
-                    filter: invert(1); 
+                    filter: invert(1);
+                    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+                &.is-full{
+                    color: $text-color-light;
                 }
             }
 
@@ -137,6 +145,16 @@ main{
                     background-color: transparent;
                     border: none;
                     cursor: pointer;
+                    font-family: 'Montserrat';
+                    transition: color 0.5s ease;
+
+                    &:hover{
+                        color: white;
+                    }
+                }
+
+                &.is-full{
+                    color: $text-color-light;
                 }
             }
 
