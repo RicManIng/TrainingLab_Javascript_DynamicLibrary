@@ -62,6 +62,9 @@
 
                     // Directory di destinazione
                     $uploadFileDir = './resources/img/';
+                    if (!is_dir($uploadFileDir)) {
+                        mkdir($uploadFileDir, 0755, true);
+                    }
                     $dest_path = $uploadFileDir . $newFileName;
 
                     // Sposta il file nella directory di destinazione
@@ -69,12 +72,18 @@
                         $avatarPath = $dest_path;
                     } else {
                         $register_error = true;
-                        // Gestisci l'errore nel caricamento
+                        $_SESSION['error_message'] = "Errore nel caricamento dell'immagine.";
+                        error_log("Errore nel move_uploaded_file: " . print_r($_FILES['account-image'], true));
                     }
                 } else {
                     $register_error = true;
-                    // Gestisci il tipo di file non valido
+                    $_SESSION['error_message'] = "Tipo di file non valido. Sono accettati solo JPG, JPEG, PNG e GIF.";
                 }
+            } else {
+                $register_error = true;
+                $_SESSION['error_message'] = isset($_FILES['account-image']['error']) ? 
+                    "Errore nell'upload del file: " . $_FILES['account-image']['error'] : 
+                    "File non inviato.";
             }
 
             if (!$register_error) {
@@ -85,7 +94,8 @@
                     "cognome" => $cognome,
                     "data_di_nascita" => $data_di_nascita,
                     "username" => $username,
-                    "password" => password_hash($password, PASSWORD_BCRYPT), // Hash sicuro della password
+                    //"password" => password_hash($password, PASSWORD_BCRYPT), // Hash sicuro della password
+                    "password" => $password,
                     "email" => $email,
                     "avatar" => isset($avatarPath) ? $avatarPath : null
                 ];
@@ -135,7 +145,7 @@
             ?>
         <?php elseif($_GET['state'] === 'register'): ?>
             <section id="register-form">
-                <form action="login.php?selected=3&state=register" method="post" novalidate>
+                <form action="login.php?selected=3&state=register" method="post" enctype="multipart/form-data" novalidate>
                     <h1>Register</h1>
                     <label for="Name">Name * :</label>
                     <input type="text" name="name" id="name" required placeholder="insert your name" autocomplete="off">
