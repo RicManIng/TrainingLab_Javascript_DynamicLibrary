@@ -6,7 +6,7 @@
     },
     {
         "id" : 2,
-        "name" : "addItem",
+        "name" : "Add Item",
         "url" : "addItem.php?selected=2"
     },
     {

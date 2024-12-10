@@ -16,24 +16,28 @@
                     <label for="image-file">Add Book Image * :</label>
                     <input type="file" id="image-file" name="image-file" accept="image/*" required>
                     <label for="book-title">Book Title * :</label>
-                    <input type="text" id="book-title" name="book-title" required>
+                    <input type="text" id="book-title" name="book-title" required placeholder="insert the book title">
                     <label for="book-author">Book Author * :</label>
-                    <input type="text" id="book-author" name="book-author" required>
-                    <label for="item-description">Item Description</label>
-                    <textarea id="item-description" name="item-description" required></textarea>
-                    <label for="item-rating">Item Rating</label>
-                    <input type="number" id="item-rating" name="item-rating" min="1" max="5" required value="5">
+                    <input type="text" id="book-author" name="book-author" required placeholder="insert the book author">
+                    <label for="book-type">Select book type * :</label>
+                    <select name="book-type" id="book-type">
+                        <option value="" class="not-select">Select book type</option>
+                    </select>
                     <div id="item-rating-view">
-                        <p>Select a rating * : </p>
-                        <i class="fas fa-star" id="star-1"></i>
-                        <i class="fas fa-star" id="star-2"></i>
-                        <i class="fas fa-star" id="star-3"></i>
-                        <i class="fas fa-star" id="star-4"></i>
-                        <i class="fas fa-star" id="star-5"></i>
+                        <label for="book-rating">Book Rating * :</label>
+                        <input type="number" id="book-rating" name="book-rating" min="1" max="5" required value="5">
+                        <i class="fas fa-star colored" id="star-1"></i>
+                        <i class="fas fa-star colored" id="star-2"></i>
+                        <i class="fas fa-star colored" id="star-3"></i>
+                        <i class="fas fa-star colored" id="star-4"></i>
+                        <i class="fas fa-star colored" id="star-5"></i>
                     </div>
                     <label for="how-to-find">Insert the URL to find the book * :</label>
-                    <input type="url" id="how-to-find" name="how-to-find" required>
-                    
+                    <input type="url" id="how-to-find" name="how-to-find" required placeholder="copy and paste the url to buy the book">
+                    <label for="summary">Add review summary * :</label>
+                    <textarea name="summary" id="summary" required rows="10" placeholder="insert your book summary"></textarea>
+                    <label for="review">Add review * :</label>
+                    <textarea name="review" id="review" required rows="20" placeholder="insert your book review"></textarea>
                     <button type="submit">Add Item</button>
                 </form>
             </section>

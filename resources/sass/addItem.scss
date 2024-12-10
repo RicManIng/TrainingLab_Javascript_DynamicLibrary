@@ -35,4 +35,112 @@ main{
             }
         }
     }
+
+    #normal-form{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        max-width: 600px;
+        background-color: $box-background-color-light;
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid $text-color-dark;
+        margin: 10vh 0;
+
+        h1{
+            width: 100%;
+            text-align: center;
+            color: $text-color-dark;
+            margin-bottom: 5vh;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            label{
+                margin-bottom: 1vh;
+                color: $text-color-dark;
+            }
+
+            input, textarea, select{
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                margin-bottom: 5vh;
+                background-color: $box-background-color-dark;
+            }
+
+            input, textarea{
+                color: $text-color-light;
+
+                &::placeholder{
+                    color: darkgray;
+                }
+            }
+
+            input[type='file']{
+                color: darkgray;
+
+                &.selection{
+                    color: $text-color-light;
+                }
+            }
+
+            #book-rating{
+                display: none;
+            }
+
+            select{
+                color: darkgray;
+
+                &.selection{
+                    color: $text-color-light;
+                }
+
+                .not-select{
+                    color: darkgray;
+                }
+
+                .select{
+                    color: $text-color-light;
+                }
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5vh;
+                label{
+                    margin-right: 0.5vw;
+                    margin-bottom: 0px;
+                }
+
+                i{
+                    color: rgb(136, 64, 64);
+
+                    &.colored{
+                        color: $text-color-dark;
+                    }
+                }
+                
+            }
+
+            button{
+                width: 40%;
+                margin: 0 auto;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid $text-color-dark;
+                background-color: $box-background-color-dark;
+                color: $text-color-light;
+
+                &:hover{
+                    background-color: rgb(136, 64, 64);
+                    color: $box-background-color-dark;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
