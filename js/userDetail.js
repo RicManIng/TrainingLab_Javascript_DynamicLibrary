@@ -71,6 +71,8 @@ function loadUserReviews(bookUserArray, bookUserComments, bookUserLikes){
         let bookComments = bookUserComments.filter(comment => comment.id == book.id);
         let bookLikes = bookUserLikes.filter(like => like.id == book.id);
 
+        console.log(bookLikes);
+
         let reviewCard = document.createElement('div');
         reviewCard.className = 'reviewCard';
         document.querySelector('main').appendChild(reviewCard);
@@ -86,7 +88,11 @@ function loadUserReviews(bookUserArray, bookUserComments, bookUserLikes){
         reviewLikeIcon.className = 'fas fa-thumbs-up';
         reviewLikeContainer.appendChild(reviewLikeIcon);
         let reviewLikeNumber = document.createElement('p');
-        reviewLikeNumber.textContent = bookLikes[0].likes.length;
+        if(bookLikes.length>0){
+            reviewLikeNumber.textContent = bookLikes[0].likes.length;
+        } else {
+            reviewLikeNumber.textContent = 0;
+        }
         reviewLikeContainer.appendChild(reviewLikeNumber);
 
         let reviewCommentContainer = document.createElement('div');

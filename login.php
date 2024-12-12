@@ -136,7 +136,7 @@
             </section>
         <?php elseif($_GET['state'] === 'account'): ?>
             <section id="account-form">
-
+                <!-- wait to implement -->
             </section>
         <?php elseif($_GET['state'] === 'logout'): ?>
             <?php 

@@ -117,7 +117,7 @@ function createBookCards(books, likes, reset = false){
     let actualLength = reviews.length;
 
     for(let i = actualLength; i < actualLength + 10; i++){
-        if(i >= books.length){
+        if(i >= books.length){ // Modificato da > a >=
             let noMoreReviewsMessage = document.getElementById('noMoreReviewsMessage');
             noMoreReviewsMessage.innerHTML = 'No more reviews to show';
             let showMore = document.getElementById('loadMore');
@@ -125,16 +125,18 @@ function createBookCards(books, likes, reset = false){
             break;
         }
         const filteredBook = books[i];
+        console.log(filteredBook);
         let id = filteredBook.id;
         const filteredLike = likes.filter(like => like.id == id);
+        console.log(filteredLike);
         if(filteredBook && filteredLike.length > 0){
-            console.log(1);
+            console.log(books.length, i);
             createBookCard(filteredBook, filteredLike[0].likes.length, i);
+        } else {
+            createBookCard(filteredBook, 0, i);
         }
     }
 }
-
-
 
 function handleScroll(oddElements, evenElements) {
     oddElements.forEach(element => {

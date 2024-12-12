@@ -144,6 +144,11 @@ main{
                 
             }
 
+            p{
+                margin-bottom: 5vh;
+                font-size: 0.8rem;
+            }
+
             button{
                 width: 40%;
                 margin: 0 auto;
@@ -157,6 +162,12 @@ main{
                     background-color: rgb(136, 64, 64);
                     color: $box-background-color-dark;
                     cursor: pointer;
+                }
+
+                &:disabled{
+                    background-color: darkgray;
+                    color: $box-background-color-dark;
+                    cursor: not-allowed;
                 }
             }
         }
